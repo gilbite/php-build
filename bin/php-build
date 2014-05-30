@@ -575,6 +575,8 @@ $CONFIGURE_OPTIONS"
         export ac_cv_exeext=''
     fi
 
+    sed -i"" -e "s|APXS_LIBEXECDIR='\$(INSTALL_ROOT)'\`\$APXS -q LIBEXECDIR\`|APXS_LIBEXECDIR='\$(INSTALL_ROOT)$PREFIX/libexec'|" ./configure
+
     ./configure $argv > /dev/null
 
     # Use php-build prefix for the Apache libexec folder
