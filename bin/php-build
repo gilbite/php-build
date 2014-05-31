@@ -576,6 +576,7 @@ $CONFIGURE_OPTIONS"
     fi
 
     sed -i"" -e "s|APXS_LIBEXECDIR='\$(INSTALL_ROOT)'\`\$APXS -q LIBEXECDIR\`|APXS_LIBEXECDIR='\$(INSTALL_ROOT)$PREFIX/libexec'|" ./configure
+    sed -i"" -e "s|if test -z \`\$APXS -q SYSCONFDIR\`; then|if test 1; then|" ./configure
 
     ./configure $argv > /dev/null
 
